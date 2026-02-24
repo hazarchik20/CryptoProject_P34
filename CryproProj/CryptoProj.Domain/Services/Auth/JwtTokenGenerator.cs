@@ -1,4 +1,4 @@
-using System.IdentityModel.Tokens.Jwt;
+﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using CryptoProj.Domain.Models;
@@ -33,7 +33,7 @@ public class JwtTokenGenerator
             claims: claims,
             expires: DateTime.UtcNow.AddMinutes(1),
             signingCredentials: creds);
-        
+
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 }

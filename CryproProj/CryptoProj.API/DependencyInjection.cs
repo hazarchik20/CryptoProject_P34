@@ -21,8 +21,10 @@ public static class DependencyInjection
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<ICryptocurrencyRepository, CryptocurrencyDataProvider>();
         services.AddScoped<ICryptoHistoryRepository, CryptoHistoryRepository>();
+        services.AddScoped<ICryptoAnalyticsRepository, CryptoAnalyticsRepository>();
 
         services.AddScoped<UsersService>();
+        services.AddScoped<CryptoAnalyticsService>();
         services.AddScoped<CryptocurrenciesService>();
         services.AddTransient<JwtTokenGenerator>();
 

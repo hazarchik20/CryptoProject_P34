@@ -14,12 +14,15 @@ namespace CryptoProj.API.Controllers;
 public class CryptocurrenciesController : ControllerBase
 {
     private readonly CryptocurrenciesService _cryptocurrenciesService;
+    private readonly CryptoAnalyticsService _cryptoAnalyticsServices;
     private readonly IValidator<CryptocurrencyRequest> _validator;
     private readonly IMemoryCache _memoryCache;
 
-    public CryptocurrenciesController(CryptocurrenciesService cryptocurrenciesService, IMemoryCache memoryCache, IValidator<CryptocurrencyRequest> validator)
+
+    public CryptocurrenciesController(CryptocurrenciesService cryptocurrenciesService, IMemoryCache memoryCache, IValidator<CryptocurrencyRequest> validator, CryptoAnalyticsService cryptoAnalytics )
     {
         _cryptocurrenciesService = cryptocurrenciesService;
+        _cryptoAnalyticsServices = cryptoAnalytics;
         _memoryCache = memoryCache;
         _validator = validator;
     }
@@ -98,4 +101,25 @@ public class CryptocurrenciesController : ControllerBase
         await _cryptocurrenciesService.AddHistoryItem(id, request);
         return Created();
     }
+
+
+   
+    [HttpGet("/analytics{cryptoId}")]
+    public async Task<IActionResult> Get(int cryptoId)
+    {
+        var analytics = await _cryptoAnalyticsServices.GetAnalyticsAsync(cryptoId);
+
+        if (analytics == null)
+            return NotFound();
+
+        return Ok(analytics);
+    }
+    
+    [HttpPost("/analytics{cryptoId}/calculate")]
+    public async Task<IActionResult> Calculate(int cryptoId, [FromQuery] int limit=10, [FromQuery] int offset = 0)
+    {
+        var analytics = await _cryptoAnalyticsServices.CalculateAnalyticsAsync(cryptoId, limit, offset);
+        return Ok(analytics);
+    }
+
 }
