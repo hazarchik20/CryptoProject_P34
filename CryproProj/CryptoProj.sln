@@ -10,6 +10,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoProj.WebDataProvider"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIChat.WebApi", "AIChat.WebApi\AIChat.WebApi.csproj", "{18ADE5C8-B236-4101-A28E-F72C8FA8196D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{1D7A38CA-F0B1-413D-A1C4-6A96A02DE910}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.Tests", "TestProject.Tests\TestProject.Tests.csproj", "{4902DA06-F9E9-40CE-AA68-459F35082528}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,13 @@ Global
 		{18ADE5C8-B236-4101-A28E-F72C8FA8196D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18ADE5C8-B236-4101-A28E-F72C8FA8196D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18ADE5C8-B236-4101-A28E-F72C8FA8196D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D7A38CA-F0B1-413D-A1C4-6A96A02DE910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D7A38CA-F0B1-413D-A1C4-6A96A02DE910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D7A38CA-F0B1-413D-A1C4-6A96A02DE910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D7A38CA-F0B1-413D-A1C4-6A96A02DE910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4902DA06-F9E9-40CE-AA68-459F35082528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4902DA06-F9E9-40CE-AA68-459F35082528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4902DA06-F9E9-40CE-AA68-459F35082528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4902DA06-F9E9-40CE-AA68-459F35082528}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
