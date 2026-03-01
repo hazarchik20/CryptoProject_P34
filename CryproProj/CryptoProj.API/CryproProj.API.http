@@ -12,3 +12,9 @@ Accept: application/json
 
 
 ###
+
+
+GET http://localhost:5154/api/v1/news
+Accept: application/json
+
+###

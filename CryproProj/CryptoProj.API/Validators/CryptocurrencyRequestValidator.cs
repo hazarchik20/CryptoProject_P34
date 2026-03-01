@@ -15,5 +15,9 @@ public class CryptocurrencyRequestValidator : AbstractValidator<CryptocurrencyRe
         RuleFor(x => x.Offset)
             .GreaterThanOrEqualTo(1)
             .WithMessage("Offset must be greater than or equal to 1");
+        
+        RuleFor(x => x.Symbol)
+            .Matches(@"^[A-Z]{3}$")
+            .WithMessage("");
     }
 }
